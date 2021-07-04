@@ -4,7 +4,7 @@ const reducer = (state, action) => {
         case 'SET_FAVORITE':
             return {
                 ...state,
-                myList: [...state.mylist, action.payload]
+                myList: [...state.myList, action.payload]
             }
         default: 
             return state;
