@@ -7,21 +7,24 @@ import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import useInitialState from '../hooks/useInitialState';
 
-const Home = ({ myList, trends, originals}) => {
+const Home = ({ myList = [], trends = [], originals = []}) => {
 
     return (
         <>
             <Search/>
             { myList.length > 0 && 
-                (<Categories title="Mi lista">
+                <Categories title="Mi lista">
                     <Carousel>
-                        {trends.map(item => 
-                        <CarouselItem key={item.id} {...item}/>                   
+                        {myList.map(item => 
+                        <CarouselItem key={item.id}
+                         {...item}
+                         isList
+                         />                   
                         )}                    
                     </Carousel>
                 </Categories>
                 
-                )}              
+                }              
 
             <Categories title="Tendencias">
                 <Carousel>
