@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getVideoSource } from '../actions';
 import { Redirect } from 'react-router-dom';
@@ -6,7 +6,7 @@ import '../assets/styles/components/Player.scss';
 
 const Player = props => {
     const { id } = props.match.params;
-    const hasPlaying = Obect.keys(props.playing).lenght > 0;
+    const hasPlaying = Obect.keys(props.playing).length > 0;
 
     useEffect(() => {
         props.getVideoSource(id);
@@ -14,7 +14,7 @@ const Player = props => {
 
     return hasPlaying ? (
         <div className="Player">
-            <video controls autoPlay>
+            <video controls autoplay>
                 <source src={props.playing.source} type="video/mp4"/>
             </video>
             <div className="Player-back">
